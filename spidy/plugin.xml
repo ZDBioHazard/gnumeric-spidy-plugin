@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="Gnumeric_Spidy">
+    <information>
+        <name>GW2Spidy Data</name>
+        <description>Fetch item data from GW2Spidy (gw2spidy.com)</description>
+    </information>
+    <loader type="Gnumeric_PythonLoader:python">
+        <attribute name="module_name" value="spidy" />
+    </loader>
+    <services>
+        <service type="ui" id="spidy" file="spidy.xml">
+            <actions>
+                <action name="spidy_update" icon="gtk-refresh">
+                    <label>Update GW2Spidy Data</label>
+                </action>
+            </actions>
+        </service>
+    </services>
+</plugin>
