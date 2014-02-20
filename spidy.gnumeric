@@ -4,7 +4,7 @@
 		<gnm:SheetName gnm:Cols="128" gnm:Rows="128">Sheet</gnm:SheetName>
 		<gnm:SheetName gnm:Cols="128" gnm:Rows="128">Spidy</gnm:SheetName>
 	</gnm:SheetNameIndex>
-	<gnm:Geometry Width="512" Height="384"/>
+	<gnm:Geometry Width="512" Height="192" />
 	<gnm:Names>
 		<gnm:Name>
 			<gnm:name>Spidy</gnm:name>
@@ -17,30 +17,34 @@
 			<gnm:Styles>
 				<gnm:StyleRegion startCol="0" startRow="0" endCol="1" endRow="0">
 					<gnm:Style HAlign="8" VAlign="4" Shade="1" Back="9696:9696:9696">
-						<gnm:Font Unit="8" Bold="1"/>
+						<gnm:Font Bold="1" />
 					</gnm:Style>
 				</gnm:StyleRegion>
-				<gnm:StyleRegion startCol="0" startRow="1" endCol="0" endRow="1">
+				<gnm:StyleRegion startCol="0" startRow="1" endCol="0" endRow="3">
 					<gnm:Style>
 						<gnm:Validation Style="0" Type="3" AllowBlank="0" UseDropdown="1">
 							<gnm:Expression0>Spidy!$B$2:$B$128</gnm:Expression0>
 						</gnm:Validation>
 					</gnm:Style>
 				</gnm:StyleRegion>
-				<gnm:StyleRegion startCol="1" startRow="1" endCol="1" endRow="1">
-					<gnm:Style Format="0%"/>
+				<gnm:StyleRegion startCol="1" startRow="1" endCol="1" endRow="3">
+					<gnm:Style Format="0%" />
 				</gnm:StyleRegion>
 			</gnm:Styles>
-			<gnm:Cols DefaultSizePts="8.113">
-				<gnm:ColInfo No="0" Unit="81.13" HardSize="1"/>
-				<gnm:ColInfo No="1" Unit="26.37" HardSize="1"/>
+			<gnm:Cols DefaultSizePts="8">
+				<gnm:ColInfo No="0" Unit="80" HardSize="1" />
+				<gnm:ColInfo No="1" Unit="32" HardSize="1" />
 			</gnm:Cols>
-			<gnm:Rows DefaultSizePts="8.113"/>
+			<gnm:Rows DefaultSizePts="8" />
 			<gnm:Cells>
 				<gnm:Cell Row="0" Col="0" ValueType="60">Item</gnm:Cell>
 				<gnm:Cell Row="0" Col="1" ValueType="60">Margin</gnm:Cell>
-				<gnm:Cell Row="1" Col="0" ValueType="60">Platinum Ore</gnm:Cell>
+				<gnm:Cell Row="1" Col="0" ValueType="60">Iron Ore</gnm:Cell>
 				<gnm:Cell Row="1" Col="1" ExprID="1">=(round(vlookup(A2,Spidy,3,0)*0.9)-max(1,round(vlookup(A2,Spidy,3,0)*0.05)))/max(1,vlookup(A2,Spidy,2,0))</gnm:Cell>
+				<gnm:Cell Row="2" Col="0" ValueType="60">Platinum Ore</gnm:Cell>
+				<gnm:Cell Row="2" Col="1" ExprID="1" />
+				<gnm:Cell Row="3" Col="0" ValueType="60">Mithril Ore</gnm:Cell>
+				<gnm:Cell Row="3" Col="1" ExprID="1" />
 			</gnm:Cells>
 		</gnm:Sheet>
 		<gnm:Sheet>
@@ -48,33 +52,33 @@
 			<gnm:Styles>
 				<gnm:StyleRegion startCol="0" startRow="0" endCol="3" endRow="0">
 					<gnm:Style HAlign="8" VAlign="4" Shade="1" Back="9696:9696:9696">
-						<gnm:Font Unit="8" Bold="1"/>
+						<gnm:Font Bold="1" />
 					</gnm:Style>
 				</gnm:StyleRegion>
 			</gnm:Styles>
-			<gnm:Cols DefaultSizePts="8.113">
-				<gnm:ColInfo No="0" Unit="22.31" HardSize="1"/>
-				<gnm:ColInfo No="1" Unit="81.13" HardSize="1"/>
-				<gnm:ColInfo No="2" Unit="24.34" HardSize="1" Count="2"/>
+			<gnm:Cols DefaultSizePts="8">
+				<gnm:ColInfo No="0" Unit="24" HardSize="1" />
+				<gnm:ColInfo No="1" Unit="80" HardSize="1" />
+				<gnm:ColInfo No="2" Unit="24" HardSize="1" Count="2" />
 			</gnm:Cols>
-			<gnm:Rows DefaultSizePts="8.113"/>
+			<gnm:Rows DefaultSizePts="8" />
 			<gnm:Cells>
 				<gnm:Cell Row="0" Col="0" ValueType="60">ID</gnm:Cell>
 				<gnm:Cell Row="0" Col="1" ValueType="60">Name</gnm:Cell>
 				<gnm:Cell Row="0" Col="2" ValueType="60">Buy</gnm:Cell>
 				<gnm:Cell Row="0" Col="3" ValueType="60">Sell</gnm:Cell>
-				<gnm:Cell Row="1" Col="0" ValueType="40">19699</gnm:Cell>
+				<gnm:Cell Row="1" Col="0" ValueType="30">19699</gnm:Cell>
 				<gnm:Cell Row="1" Col="1" ValueType="60">Iron Ore</gnm:Cell>
-				<gnm:Cell Row="1" Col="2" ValueType="40">1</gnm:Cell>
-				<gnm:Cell Row="1" Col="3" ValueType="40">1</gnm:Cell>
-				<gnm:Cell Row="2" Col="0" ValueType="40">19702</gnm:Cell>
+				<gnm:Cell Row="1" Col="2" ValueType="30">1</gnm:Cell>
+				<gnm:Cell Row="1" Col="3" ValueType="30">1</gnm:Cell>
+				<gnm:Cell Row="2" Col="0" ValueType="30">19702</gnm:Cell>
 				<gnm:Cell Row="2" Col="1" ValueType="60">Platinum Ore</gnm:Cell>
-				<gnm:Cell Row="2" Col="2" ValueType="40">1</gnm:Cell>
-				<gnm:Cell Row="2" Col="3" ValueType="40">1</gnm:Cell>
-				<gnm:Cell Row="3" Col="0" ValueType="40">19700</gnm:Cell>
+				<gnm:Cell Row="2" Col="2" ValueType="30">1</gnm:Cell>
+				<gnm:Cell Row="2" Col="3" ValueType="30">1</gnm:Cell>
+				<gnm:Cell Row="3" Col="0" ValueType="30">19700</gnm:Cell>
 				<gnm:Cell Row="3" Col="1" ValueType="60">Mithril Ore</gnm:Cell>
-				<gnm:Cell Row="3" Col="2" ValueType="40">1</gnm:Cell>
-				<gnm:Cell Row="3" Col="3" ValueType="40">1</gnm:Cell>
+				<gnm:Cell Row="3" Col="2" ValueType="30">1</gnm:Cell>
+				<gnm:Cell Row="3" Col="3" ValueType="30">1</gnm:Cell>
 			</gnm:Cells>
 		</gnm:Sheet>
 	</gnm:Sheets>
