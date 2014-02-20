@@ -63,10 +63,10 @@
 			</gnm:Cols>
 			<gnm:Rows DefaultSizePts="8" />
 			<gnm:Cells>
-				<gnm:Cell Row="0" Col="0" ValueType="60">ID</gnm:Cell>
-				<gnm:Cell Row="0" Col="1" ValueType="60">Name</gnm:Cell>
-				<gnm:Cell Row="0" Col="2" ValueType="60">Buy</gnm:Cell>
-				<gnm:Cell Row="0" Col="3" ValueType="60">Sell</gnm:Cell>
+				<gnm:Cell Row="0" Col="0" ExpirID="1">=spidy_col("ID", "data_id")</gnm:Cell>
+				<gnm:Cell Row="0" Col="1" ExpirID="2">=spidy_col("Name", "name")</gnm:Cell>
+				<gnm:Cell Row="0" Col="2" ExpirID="3">=spidy_col("Buy", "max_offer_unit_price")</gnm:Cell>
+				<gnm:Cell Row="0" Col="3" ExpirID="4">=spidy_col("Sell", "min_sale_unit_price")</gnm:Cell>
 				<gnm:Cell Row="1" Col="0" ValueType="30">19699</gnm:Cell>
 				<gnm:Cell Row="1" Col="1" ValueType="60">Iron Ore</gnm:Cell>
 				<gnm:Cell Row="1" Col="2" ValueType="30">1</gnm:Cell>

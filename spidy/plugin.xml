@@ -15,5 +15,11 @@
                 </action>
             </actions>
         </service>
+        <service type="function_group" id="spidy">
+            <category>GW2Spidy</category>
+            <functions>
+                <function name="spidy_col" />
+            </functions>
+        </service>
     </services>
 </plugin>

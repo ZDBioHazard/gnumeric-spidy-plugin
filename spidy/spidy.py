@@ -43,8 +43,10 @@ def spidy_update(gui):
         sheet.rename("Spidy")
 
         # Create the default columns.
-        for col, name in enumerate(["ID", "Name", "Buy", "Sell"]):
-            sheet[col, 0].set_text(name)
+        for col, name in enumerate([("ID", 'data_id'), ("Name", 'name'),
+                                    ("Buy", 'max_offer_unit_price'),
+                                    ("Sell", 'min_sale_unit_price')]):
+            sheet[col, 0].set_text('=spidy_col("%s", "%s")' % name)
         return  # This is an empty sheet, so there's no point updating it.
 
     # We'll need this a lot.
@@ -72,4 +74,14 @@ def spidy_update(gui):
         sheet[col + 2, row].set_text(str(data.get('max_offer_unit_price', 0)))
         sheet[col + 3, row].set_text(str(data.get('min_sale_unit_price', 0)))
 
+
+def spidy_col(display, field):
+    ("""@GNM_FUNC_HELP_NAME@SPIDY_COL:Define a GW2Spidy data colmun.\n"""
+     """@GNM_FUNC_HELP_ARG@display:Display this in this cell\n"""
+     """@GNM_FUNC_HELP_ARG@field:GW2Spidy API data field\n"""
+     """@GNM_FUNC_HELP_EXAMPLES@=SPIDY_COL('Buy', 'max_offer_unit_price')""")
+    return display  # Wow, wasn't that easy? ;)
+
+
 spidy_ui_actions = {'spidy_update': spidy_update}
+spidy_functions = {'spidy_col': ('ss', 'display, field', spidy_col)}
