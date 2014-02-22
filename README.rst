@@ -47,9 +47,23 @@ The "Spidy sheet" looks like this:
   19700   Mithril Ore     37     38
 ======== ============== ===== ======
 
-All you have to do is input GW2Spidy item IDs [2]_ into the ``ID`` column
-of new rows, and the other information will be fetched from GW2Spidy
-automatically the next time you use "Update GW2Spidy Data".
+The column headers use a special function called ``spidy_col(str,str)`` which
+is called with two string arguments: ``display``, which is simply the text
+that will be displayed in the cell, and ``field``, which corresponds to an item
+data field in a `GW2Spidy Item Data API`_ response dictionary.
+
+You must include a ``data_id`` column.
+
+When this plugin creates a new "Spidy sheet" for you, it will have some
+predefined columns you can take a look at.
+
+.. _GW2Spidy Item Data API:
+   https://github.com/rubensayshi/gw2spidy/wiki/API-v0.9#wiki-item-data
+
+Once you have your ``spidy_col()`` columns set-up, all you have to do is input
+GW2Spidy item IDs [2]_ into the ``data_id`` column of your Spidy table, and the
+other information will be fetched from GW2Spidy automatically the next time you
+use "Update GW2Spidy Data".
 
 .. note:: Whenever you update the GW2Spidy data, you will likely need to
           manually recalculate the workbook. This can be done by selecting
@@ -66,7 +80,3 @@ thread, and all items are refreshed synchronously, so if you have a lot
 of items to refresh, the UI can hang for a very surprising amount of time
 until it's finished. I'll see if I can at least get some sort of progress
 dialog working at some point.
-
-Currently, only the ``name``, ``buy``, and ``sell`` information is
-supported, and the table format is rigid. More fields will be added
-later, and hopefully an arbitrary column system will come eventually.
