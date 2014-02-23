@@ -20,12 +20,6 @@ Installation
 Just drop the ``spidy/`` folder in your Gnumeric plugins directory [1]_,
 enable it in the Gnumeric plugins interface, and there you go.
 
-Someday I'll figure out how to use setuptools so EasyInstall_ or PIP_
-or whatever can install it the new-fangled way. ;P
-
-.. _EasyInstall: https://pypi.python.org/pypi/setuptools
-.. _PIP: http://www.pip-installer.org
-
 .. [1] Usually ``~/.gnumeric/<version>/plugins``
 
 How to use this plugin
@@ -57,26 +51,33 @@ You must include a ``data_id`` column.
 When this plugin creates a new "Spidy sheet" for you, it will have some
 predefined columns you can take a look at.
 
-.. _GW2Spidy Item Data API:
-   https://github.com/rubensayshi/gw2spidy/wiki/API-v0.9#wiki-item-data
-
 Once you have your ``spidy_col()`` columns set-up, all you have to do is input
 GW2Spidy item IDs [2]_ into the ``data_id`` column of your Spidy table, and the
 other information will be fetched from GW2Spidy automatically the next time you
 use "Update GW2Spidy Data".
 
-.. note:: Whenever you update the GW2Spidy data, you will likely need to
-          manually recalculate the workbook. This can be done by selecting
-          "Recalculate" from the "Edit" menu, or by simply pressing ``F9``.
-
 .. [2] The item ID can be found by looking at the end of an item URL on
        the GW2Spidy website, such as ``http://gw2spidy.com/item/19700``
+
+.. _GW2Spidy Item Data API:
+   https://github.com/rubensayshi/gw2spidy/wiki/API-v0.9#wiki-item-data
 
 Limitations
 ===========
 
-I'm not aware of any way to get the plugin to query data in a background
-thread, and all items are refreshed synchronously, so if you have a lot
-of items to refresh, the UI can hang for a very surprising amount of time
-until it's finished. I'll see if I can at least get some sort of progress
-dialog working at some point.
+**Other worksheets may not update automatically after refreshing**
+  Whenever you update the GW2Spidy data, you will likely need to manually
+  recalculate the workbook. This can be done by selecting "Recalculate" from
+  the "Edit" menu, or by simply pressing ``F9``.
+
+**Warning and error messages are not displayed**
+  There is currently no way to know what is happening inside the plugin
+  without starting Gnumeric from the command line. All errors and warnings
+  are printed to the terminal and fail silently in the UI.
+
+**Gnumeric UI hangs while refreshing**
+  I'm not aware of any way to get the plugin to query data in a background
+  thread, and all items are refreshed synchronously, so if you have a lot
+  of items to refresh, the UI can hang for a very surprising amount of time
+  until it's finished. I'll see if I can at least get some sort of progress
+  dialog working at some point.
